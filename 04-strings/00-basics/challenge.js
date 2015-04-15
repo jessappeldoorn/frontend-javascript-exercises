@@ -21,5 +21,10 @@ module.exports.findLastMatch = function(text, searchString) {
 };
 
 module.exports.substringBetweenMatches = function(text, searchString) {
-
+  var firstMatch = text.indexOf(searchString);
+  var lastMatch = text.lastIndexOf(searchString);
+  var searchStringLength = searchString.length;
+  var subStringLength = firstMatch + searchStringLength
+  return text.substring(subStringLength, lastMatch);
+ // return text.substring(firstMatch, lastMatch);
 };
